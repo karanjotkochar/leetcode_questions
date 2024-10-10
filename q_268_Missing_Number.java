@@ -4,6 +4,7 @@ public class q_268_Missing_Number {
     public static void main(String[] args) {
         // https://leetcode.com/problems/missing-number/description/
 //        missingNumber1();
+//        missingNumber2();
     }
 
     public static int missingNumber1(int[] nums) {
@@ -21,6 +22,25 @@ public class q_268_Missing_Number {
 
         return (actualSum - sum);
 
+    }
+
+    public static int missingNumber2(int[] nums) {
+
+        // Using XOR gate, Bit Manipulation
+        int allXOR = 0;
+
+        // XOR of all numbers in [0,n]
+        for (int i=0; i<nums.length; i++) {
+            allXOR = allXOR ^ i;
+        }
+
+        // XOR of all numbers in the given array
+        for (int num : nums) {
+            allXOR = allXOR ^ num;
+        }
+
+        // The XOR operation returns the missing number
+        return allXOR;
     }
 
 
