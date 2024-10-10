@@ -30,7 +30,7 @@ public class q_268_Missing_Number {
         int allXOR = 0;
 
         // XOR of all numbers in [0,n]
-        for (int i=0; i<nums.length; i++) {
+        for (int i=0; i<=nums.length; i++) {
             allXOR = allXOR ^ i;
         }
 
