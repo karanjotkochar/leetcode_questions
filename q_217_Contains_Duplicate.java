@@ -4,9 +4,11 @@ import java.util.Set;
 
 public class q_217_Contains_Duplicate {
     public static void main(String[] args) {
-        //containsDuplicate1();
-        //containsDuplicate2();
-        //containsDuplicate3();
+        // https://leetcode.com/problems/contains-duplicate/solutions/
+
+//        containsDuplicate1();
+//        containsDuplicate2();
+//        containsDuplicate3();
     }
     public static boolean containsDuplicate1(int[] nums) {
 
