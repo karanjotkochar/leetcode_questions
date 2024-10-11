@@ -1,12 +1,12 @@
 import java.util.Arrays;
 
 public class q_268_Missing_Number {
+
+//    https://leetcode.com/problems/missing-number/description/
     public static void main(String[] args) {
-        // https://leetcode.com/problems/missing-number/description/
 //        missingNumber1();
 //        missingNumber2();
     }
-
     public static int missingNumber1(int[] nums) {
 
         // Brute force approach, addition

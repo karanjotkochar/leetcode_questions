@@ -3,9 +3,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class q_217_Contains_Duplicate {
-    public static void main(String[] args) {
-        // https://leetcode.com/problems/contains-duplicate/solutions/
 
+//    https://leetcode.com/problems/contains-duplicate/solutions/
+    public static void main(String[] args) {
 //        containsDuplicate1();
 //        containsDuplicate2();
 //        containsDuplicate3();
