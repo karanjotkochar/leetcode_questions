@@ -8,6 +8,13 @@ public class q_136_Single_Number {
 
     public static int singleNumber(int[] nums) {
 
-        return 0;
+        // Using XOR gate, Bit Manipulation
+        int doXOR = 0;
+
+        for (int num : nums) {
+            doXOR = doXOR ^ num;
+        }
+
+        return doXOR;
     }
 }
