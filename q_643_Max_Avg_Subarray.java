@@ -2,8 +2,8 @@
 
 public class q_643_Max_Avg_Subarray {
     public static void main(String[] args) {
-        int[] nums = {1,12,-5,-6,50,3};
-        int k = 4;
+        int[] nums = {-1};
+        int k = 1;
 //        findMaxAverage1(nums, k);
 //        findMaxAverage2(nums, k);
         findMaxAverage3(nums,k);
