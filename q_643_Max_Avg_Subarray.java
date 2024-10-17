@@ -6,14 +6,14 @@ public class q_643_Max_Avg_Subarray {
         int k = 1;
 //        findMaxAverage1(nums, k);
 //        findMaxAverage2(nums, k);
-        findMaxAverage3(nums,k);
-        System.out.println(findMaxAverage3(nums, k));
+//        findMaxAverage3(nums,k);
+//        System.out.println(findMaxAverage2(nums, k));
     }
     public static double findMaxAverage1(int[] nums, int k) {
 
         // Brute force approach
         int n = nums.length;
-        double max = 0.0;
+        double max = Integer.MIN_VALUE;
 
         for(int i=0; i<n; i++) {
 
@@ -35,18 +35,20 @@ public class q_643_Max_Avg_Subarray {
     }
 
     public static double findMaxAverage2(int[] nums, int k) {
+
         int n = nums.length;
         double max = Integer.MIN_VALUE;
 
         if (n == 1) {
             max = Double.valueOf(nums[0]);
+
         } else {
             for (int i = 0; i <= n - k; i++) {
-                double s = 0;
+                double sum = 0;
                 for (int j = i; j <= i + k - 1; j++) {
-                    s += nums[j];
+                    sum = sum + nums[j];
                 }
-                max = Math.max(max, s);
+                max = Math.max(max, sum);
             }
         }
         return max / k;
@@ -75,6 +77,6 @@ public class q_643_Max_Avg_Subarray {
             leftPointer++;
         }
 
-        return (max/n);
+        return (max/k);
     }
 }
