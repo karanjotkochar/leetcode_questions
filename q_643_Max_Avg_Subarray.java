@@ -1,14 +1,13 @@
 //https://leetcode.com/problems/maximum-average-subarray-i/description/
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class q_643_Max_Avg_Subarray {
     public static void main(String[] args) {
         int[] nums = {1,12,-5,-6,50,3};
         int k = 4;
-        findMaxAverage1(nums, k);
-        System.out.println(findMaxAverage1(nums, k));
+//        findMaxAverage1(nums, k);
+//        findMaxAverage2(nums, k);
+        findMaxAverage3(nums,k);
+        System.out.println(findMaxAverage3(nums, k));
     }
     public static double findMaxAverage1(int[] nums, int k) {
 
@@ -21,7 +20,7 @@ public class q_643_Max_Avg_Subarray {
             double finalSum = 0.0;
             int count = 0;
 
-            for(int j = i; j<i+k&&j<n; j++){
+            for(int j = i; j<i+k && j<n; j++){
                 finalSum = finalSum + nums[j];
                 count++;
             }
@@ -33,5 +32,49 @@ public class q_643_Max_Avg_Subarray {
         }
 
         return max;
+    }
+
+    public static double findMaxAverage2(int[] nums, int k) {
+        int n = nums.length;
+        double max = Integer.MIN_VALUE;
+
+        if (n == 1) {
+            max = Double.valueOf(nums[0]);
+        } else {
+            for (int i = 0; i <= n - k; i++) {
+                double s = 0;
+                for (int j = i; j <= i + k - 1; j++) {
+                    s += nums[j];
+                }
+                max = Math.max(max, s);
+            }
+        }
+        return max / k;
+    }
+
+    public static double findMaxAverage3(int[] nums, int k) {
+
+        // Sliding window algorithm
+        int n = nums.length;
+        double max = Integer.MIN_VALUE;
+        double sum = 0;
+
+        int leftPointer = 0;
+        int rightPointer = 0;
+
+        while (leftPointer + k <= n) {
+
+            while (rightPointer-leftPointer < k) {
+
+                sum = sum + nums[rightPointer];
+                rightPointer++;
+            }
+
+            max = Math.max(max, sum);
+            sum = sum - nums[leftPointer];
+            leftPointer++;
+        }
+
+        return (max/n);
     }
 }
