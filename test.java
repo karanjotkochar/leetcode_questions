@@ -15,7 +15,7 @@ class GfG {
           return memo[n];
      }
 
-     static int nthFibonacci(int n) {
+          static int nthFibonacci(int n) {
 
           int[] memo = new int[n + 1];
           Arrays.fill(memo, -1);
