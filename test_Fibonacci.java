@@ -6,8 +6,11 @@ public class test_Fibonacci {
 //        fibbonaciNth(n);
 //        System.out.println(fibbonaciNth(n));
 
-        fibbonaciNth2(n);
-        System.out.println(fibbonaciNth2(n));
+//        fibbonaciNth2(n);
+//        System.out.println(fibbonaciNth2(n));
+
+        fibbonaciNth3(n);
+        System.out.println(fibbonaciNth3(n));
     }
 
     public static int fibbonaciNth(int n) {
@@ -22,7 +25,7 @@ public class test_Fibonacci {
 
     public static int fibbonaciNth2(int n) {
 
-        // Dynamic programming approach
+        // Dynamic programming approach // Memoization
         int[] memo = new int[n+1];
         Arrays.fill(memo, -1);
 
@@ -35,6 +38,28 @@ public class test_Fibonacci {
         memo[n] = fibbonaciNth(n-1) + fibbonaciNth(n-2);
 
         return memo[n];
+    }
+
+    public static int fibbonaciNth3(int n) {
+
+        // Dynamic programming approach // Tablulation
+        if (n <= 1)
+            return n;
+
+        int[] dp = new int[n + 1];
+
+        dp[0] = 0;
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; ++i) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+
+        return dp[n];
+
+
+
+
     }
 
 
