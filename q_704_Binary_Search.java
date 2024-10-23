@@ -6,9 +6,9 @@ public class q_704_Binary_Search {
         int target = 9;
 
 //        search(nums, target);
+//        System.out.println(search(nums, target));
 //        System.out.println(search2(nums, target));
-        System.out.println(search3(nums, target));
-
+//        System.out.println(search3(nums, target));
     }
 
     public static int search(int[] nums, int target) {
@@ -59,6 +59,7 @@ public class q_704_Binary_Search {
 
     private static int recursiveBST(int[] nums, int low, int high, int target) {
 
+        // In recursive solution --> not use loop, instead if condition
         if (low <= high) {
             int mid = low + (high-low)/2;
 
