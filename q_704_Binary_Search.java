@@ -1,8 +1,6 @@
 // https://leetcode.com/problems/binary-search/description/
 
-import java.util.Arrays;
-
-public class q_70_Binary_Search {
+public class q_704_Binary_Search {
     public static void main(String[] args) {
         int[] nums = {-1,0,3,5,9,12};
         int target = 9;
