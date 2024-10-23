@@ -6,22 +6,25 @@ public class q_744_Smallest_Letter_Greater_Target {
        char target = 'a';
 
        nextGreatestLetter(letters, target);
+        System.out.println(nextGreatestLetter(letters, target));
     }
 
     public static char nextGreatestLetter(char[] letters, char target) {
-        int start =0;
-        int end= letters.length-1;
-        while(start<=end){
-            int mid = start+(end-start)/2;
 
-            if(letters[mid]>target){
-                end = mid-1;
-            }else{
-                start = mid+1;
+        int low = 0;
+        int high = letters.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if(letters[mid] < target) {
+                low = mid + 1;
+
+            } else {
+                high = mid - 1;
             }
-
         }
-        return letters[start % letters.length];
 
+        return letters[0];
     }
 }
