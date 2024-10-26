@@ -5,7 +5,7 @@ public class q_744_Smallest_Letter_Greater_Target {
        char[] letters = {'c', 'f', 'j'};
        char target = 'a';
 
-       nextGreatestLetter(letters, target);
+//       nextGreatestLetter(letters, target);
        System.out.println(nextGreatestLetter(letters, target));
     }
 
@@ -18,16 +18,18 @@ public class q_744_Smallest_Letter_Greater_Target {
 
         int ans = -1;
 
-        // Ascending order, if target greater than highest char, then target not present, thus first char
-        if (target > letters[n-1])
+        // Array is in Ascending order,
+        // If target greater than highest char, then target not present, thus first char
+        if (target >= letters[n-1]) {
             return letters[0];
+        }
 
         while (low <= high) {
-            int mid = low + (high - low) / 2;
 
-            if(letters[mid] < target) {
+            int mid = (high + low) / 2;
+
+            if (letters[mid] <= target) {
                 low = mid + 1;
-                ans = mid;
 
             } else {
                 high = mid - 1;
