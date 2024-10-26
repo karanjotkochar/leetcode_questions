@@ -50,7 +50,9 @@ public class q_206_Reverse_Linked_List {
     public static ListNode2 reverseList2(ListNode2 head) {
 
         // Recursive solution
+        // TO DO: implement recursive solution
 
+        return head;
     }
     public static void printLL(ListNode2 head) {
 
