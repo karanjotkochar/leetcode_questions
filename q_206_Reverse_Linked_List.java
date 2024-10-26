@@ -15,20 +15,23 @@ public class q_206_Reverse_Linked_List {
     public static void main(String[] args) {
         ListNode2 listNode2 = new ListNode2(1,
                                     new ListNode2(2,
-                                            new ListNode2(3,
-                                                    new ListNode2(4,
-                                                            new  ListNode2(5, null)))));
+                                    new ListNode2(3,
+                                    new ListNode2(4,
+                                    new  ListNode2(5, null)))));
 
         System.out.print("Given LL: ");
         printLL(listNode2);
 
         System.out.println();
         listNode2 = reverseList(listNode2);
+        listNode2 = reverseList2(listNode2);
 
         System.out.print("Reverse LL: ");
         printLL(listNode2);
     }
         public static ListNode2 reverseList(ListNode2 head) {
+
+        // Iterative solution
         ListNode2 prev = null;
         ListNode2 current = head;
         ListNode2 temp;
@@ -43,6 +46,12 @@ public class q_206_Reverse_Linked_List {
         }
         return prev;
     }
+
+    public static ListNode2 reverseList2(ListNode2 head) {
+
+        // Recursive solution
+
+    }
     public static void printLL(ListNode2 head) {
 
         while (head != null) {
@@ -50,4 +59,5 @@ public class q_206_Reverse_Linked_List {
             head = head.next;
         }
     }
+
 }
