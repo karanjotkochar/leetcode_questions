@@ -12,7 +12,6 @@ class ListNode2 {
     }
 }
 public class q_206_Reverse_Linked_List {
-
     public static void main(String[] args) {
         ListNode2 listNode2 = new ListNode2(1,
                                     new ListNode2(2,
@@ -20,31 +19,35 @@ public class q_206_Reverse_Linked_List {
                                                     new ListNode2(4,
                                                             new  ListNode2(5, null)))));
 
-        reverseList(listNode2);
+        System.out.print("Given LL: ");
+        printLL(listNode2);
+
+        System.out.println();
+        listNode2 = reverseList(listNode2);
+
+        System.out.print("Reverse LL: ");
         printLL(listNode2);
     }
-    public static ListNode2 reverseList(ListNode2 head) {
+        public static ListNode2 reverseList(ListNode2 head) {
         ListNode2 prev = null;
         ListNode2 current = head;
+        ListNode2 temp;
 
         while (current != null) {
-            ListNode2 temp = current.next;
+            temp = current.next;
             current.next = prev;
+
             prev = current;
             current = temp;
 
         }
-
         return prev;
     }
-
     public static void printLL(ListNode2 head) {
-        ListNode2 current = head;
 
-        while (current != null) {
-            System.out.println(current.val);
-            current = current.next;
+        while (head != null) {
+            System.out.print(" " + head.val);
+            head = head.next;
         }
-        System.out.println("null");
     }
 }
