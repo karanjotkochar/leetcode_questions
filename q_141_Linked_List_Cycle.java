@@ -51,11 +51,14 @@ public class q_141_Linked_List_Cycle {
         ListNode3 slow = head;
         ListNode3 fast = head;
 
+        // fast.next != null check because fast.next.next can cause Null Pointer exception
+        // slow.next != null not required as it moves only one step, and we have fast.next
         while (slow != null && fast != null && fast.next != null && slow.next != null) {
             slow = slow.next;
             fast = fast.next.next;
 
             if (slow == fast) {
+                // both slow and fast pointers are at same position
                 return true;
             }
         }
