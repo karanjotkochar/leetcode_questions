@@ -48,11 +48,11 @@ public class q_203_Remove_Linked_List_Elements {
 
         while (current != null && current.next != null) {
 
-            if (current.next.val == val) {
+            if (current.next.val == val)
                 current.next = current.next.next;
-            } else {
+
+            else
                 current = current.next;
-            }
         }
 
         return head;
