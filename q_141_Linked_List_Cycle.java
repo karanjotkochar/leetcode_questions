@@ -16,9 +16,12 @@ public class q_141_Linked_List_Cycle {
         listNode3.next = new ListNode3(2);
         listNode3.next.next = new ListNode3(0);
         listNode3.next.next.next = new ListNode3(-4);
+        listNode3.next.next.next.next = new ListNode3(2);
 
-        hasCycle(listNode3);
+//        hasCycle(listNode3);
+        hasCycle2(listNode3);
         System.out.println(hasCycle(listNode3));
+        System.out.println(hasCycle2(listNode3));
 //        printLL(listNode3);
 //        System.out.println();
 //        printLL2(listNode3);
@@ -39,6 +42,23 @@ public class q_141_Linked_List_Cycle {
             head = head.next;
         }
 
+        return false;
+    }
+
+    public static boolean hasCycle2(ListNode3 head) {
+
+        // Use Fast & Slow Pointer approach
+        ListNode3 slow = head;
+        ListNode3 fast = head;
+
+        while (slow != null && fast != null && fast.next != null && slow.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                return true;
+            }
+        }
         return false;
     }
 
