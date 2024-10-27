@@ -22,6 +22,10 @@ public class q_876_Middle_Linked_List {
 
         ListNode5 solution = middleNode(listNode);
         printLL(solution);
+
+        ListNode5 solution2 = middleNode2(listNode);
+        printLL(solution2);
+
     }
     public static ListNode5 middleNode(ListNode5 head) {
 
@@ -43,6 +47,10 @@ public class q_876_Middle_Linked_List {
         }
 
         return tempHead;
+    }
+    public static ListNode5 middleNode(ListNode5 head) {
+        // Two Pointer approach
+
     }
     public static void printLL(ListNode5 head) {
 
