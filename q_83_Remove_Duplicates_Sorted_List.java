@@ -1,3 +1,7 @@
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 // https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
 class ListNode6 {
     int val;
@@ -20,12 +24,60 @@ public class q_83_Remove_Duplicates_Sorted_List {
         listNode.next.next.next = new ListNode6(3);
         listNode.next.next.next.next = new ListNode6(3);
 
-//        deleteDuplicates(listNode);
-        printLL(listNode);
+        ListNode6 solution = deleteDuplicates2(listNode);
+        printLL(solution);
 
     }
 
     public static ListNode6 deleteDuplicates(ListNode6 head) {
+
+        // Brute force approach
+        Set<Integer> set = new HashSet<>();
+        ListNode6 temp = head;
+        ListNode6 newHead = null;
+        ListNode6 tail = null;
+
+        while (temp != null){
+
+            // Create new node
+            if (!set.contains(temp.val)) {
+
+                ListNode6 newNode = new ListNode6(temp.val);
+                // First Node, so head and tail at first node
+                if(newHead == null){
+                    newHead = newNode;
+                    tail = newHead;
+                } else {
+                    tail.next = newNode;
+                    tail = newNode;
+                }
+
+                set.add(temp.val);
+            }
+
+            temp = temp.next;
+        }
+
+        return newHead;
+    }
+
+    public static ListNode6 deleteDuplicates2(ListNode6 head) {
+
+        // Changing pointer
+        ListNode6 current = head;
+
+        while (current != null && current.next != null) {
+
+            // sorted list, so same current/next terms
+            if (current.val == current.next.val) {
+                // get next to next term
+                ListNode6 nextToNextNode = current.next.next;
+                current.next = nextToNextNode;
+
+            } else {
+                current = current.next;
+            }
+        }
 
         return head;
     }
