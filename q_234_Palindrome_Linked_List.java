@@ -86,6 +86,9 @@ public class q_234_Palindrome_Linked_List {
         return true;
     }
 
+    // To Do: can use iteration, recursion as well
+    // Also stack for this problem
+
     public static void printLL(ListNode7 head) {
 
         while (head != null) {
