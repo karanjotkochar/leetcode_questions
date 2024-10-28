@@ -21,33 +21,66 @@ public class q_234_Palindrome_Linked_List {
         listNode.next.next.next = new ListNode7(1);
 
         isPalindrome(listNode);
-        printLL(listNode);
+        System.out.println(isPalindrome(listNode));
+//        printLL(listNode);
 
     }
     public static boolean isPalindrome(ListNode7 head) {
 
-        // Brute force approach: 2 pointers
+        // Two pointer approach
         ListNode7 slow = head;
         ListNode7 fast = head;
-        int length = 0;
 
-        while (fast.next != null){
-            fast = fast.next;
-            length++;
+        if (head == null || head.next == null)
+            return true;
+
+        // Traverse to middle of the Linked List
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        int middle = (length/2);
+        // slow.next is the head of second Linked List
+        // Reverse second Linked list
+        ListNode7 head2 = reverseLL(slow.next);
 
-        while (middle > 0) {
-            if (slow.val == fast.val) {
-                slow = slow.next;
-                fast = fast.prev;
-            }
-            else {
+        // 2 separate Linked List
+        slow.next = null;
+
+        boolean returnIdentical = isIdentical(head, head2);
+
+        // reverse second Linked List
+        head2 = reverseLL(head2);
+
+        // Merge back Linked Lists
+        slow.next = head2;
+
+        return returnIdentical;
+    }
+
+    public static ListNode7 reverseLL(ListNode7 head) {
+        ListNode7 current = head;
+        ListNode7 previous = null;
+        ListNode7 temp;
+
+        while (current != null) {
+            temp = current.next;
+            current.next = previous;
+            previous = current;
+            current = temp;
+        }
+
+        return previous;
+    }
+
+    public static boolean isIdentical(ListNode7 head, ListNode7 head2){
+
+        while (head != null && head2 != null) {
+            if (head.val != head2.val)
                 return false;
-            }
 
-            middle--;
+            head = head.next;
+            head2 = head2.next;
         }
 
         return true;
