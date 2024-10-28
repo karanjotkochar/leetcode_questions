@@ -32,6 +32,7 @@ public class q_83_Remove_Duplicates_Sorted_List {
     public static ListNode6 deleteDuplicates(ListNode6 head) {
 
         // Brute force approach
+        // New LL
         Set<Integer> set = new HashSet<>();
         ListNode6 temp = head;
         ListNode6 newHead = null;
@@ -70,9 +71,9 @@ public class q_83_Remove_Duplicates_Sorted_List {
 
             // sorted list, so same current/next terms
             if (current.val == current.next.val) {
+
                 // get next to next term
-                ListNode6 nextToNextNode = current.next.next;
-                current.next = nextToNextNode;
+                current.next = current.next.next;
 
             } else {
                 current = current.next;
