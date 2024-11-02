@@ -14,7 +14,7 @@ public class q_169_Majority_Element {
 
     public static int majorityElement(int[] nums) {
 
-        // Brute force approach
+        // Brute force approach, iteration
         int n = nums.length;
 
         for (int i=0; i<n; i++) {
@@ -34,7 +34,7 @@ public class q_169_Majority_Element {
 
     public static int majorityElement2(int[] nums) {
 
-        // Sorting
+        // Use sorting
         int n= nums.length;
         int count = 1;
 
