@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 
 // https://leetcode.com/problems/majority-element/description/
 public class q_169_Majority_Element {
@@ -7,7 +8,8 @@ public class q_169_Majority_Element {
 
 //        majorityElement(nums);
 //        System.out.println(majorityElement(nums));
-        System.out.println(majorityElement2(nums));
+//        System.out.println(majorityElement2(nums));
+        System.out.println(majorityElement3(nums));
     }
 
     public static int majorityElement(int[] nums) {
@@ -60,6 +62,23 @@ public class q_169_Majority_Element {
         // Last element
         if (count > n/2)
             return nums[n-1];
+
+        return -1;
+    }
+
+    public static int majorityElement3(int[] nums) {
+
+        // Use HashMap
+        int n = nums.length;
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+
+        for (int num : nums) {
+            hashMap.put(num, hashMap.getOrDefault(num,0) + 1);
+
+            if (hashMap.get(num) > n/2) {
+                return num;
+            }
+        }
 
         return -1;
     }
