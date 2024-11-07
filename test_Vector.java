@@ -15,6 +15,7 @@ public class test_Vector {
         for (int i : vector) {
             System.out.println(i);
         }
+        System.out.println("Vector 1 is: " + vector);
         // part 2
 
         Vector<Integer> vector2 = new Vector<>();
