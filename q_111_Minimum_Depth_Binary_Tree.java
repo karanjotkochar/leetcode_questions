@@ -16,9 +16,33 @@ class TreeNode2 {
 public class q_111_Minimum_Depth_Binary_Tree {
     public static void main(String[] args) {
 
+        TreeNode2 root = null;
+
+        root = new TreeNode2(3);
+        root.left = new TreeNode2(9);
+        root.right = new TreeNode2(20);
+        root.right.left = new TreeNode2(15);
+        root.right.right = new TreeNode2(7);
+
+        minDepth(root);
+        System.out.println(minDepth(root));
     }
     public static int minDepth(TreeNode2 root) {
 
-        return 0;
+        // Depth of tree
+        // Brute force approach: Recursion
+        if (root == null)
+            return 0;
+        if (root.left == null && root.right == null)
+            return 1;
+        if (root.left == null)
+            return minDepth(root.right) + 1;
+        if (root.right == null)
+            return minDepth(root.left) + 1;
+
+        int minDepthAns;
+        minDepthAns = Math.min(minDepth(root.left), minDepth(root.right)) + 1;
+
+        return minDepthAns;
     }
 }
