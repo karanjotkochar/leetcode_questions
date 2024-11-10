@@ -48,4 +48,21 @@ public class test_Binary_Tree_Treversal {
         }
 
     }
+    public static void printCurrentLevel (Node3 root, int level) {
+
+        // print nodes at the CURRENT LEVEL
+        if (root == null)
+            return;
+        if (level == 1)
+            System.out.println(root.data + " ");
+        else if (level > 1) {
+            printCurrentLevel(root.left, level - 1);
+            printCurrentLevel(root.right, level - 1);
+        }
+    }
+
+    public static void printLevelOrder(Node3 node3) {
+
+
+    }
 }
