@@ -1,6 +1,9 @@
 // Traversal
 // Level Order Traversal -- BFS
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Node3 {
     int data;
     Node3 left;
@@ -20,7 +23,8 @@ public class test_Binary_Tree_Treversal {
         root.left.left = new Node3(4);
         root.left.right = new Node3(5);
 
-        methodBFS1(root);
+        methodBFS1(root); // using Recursion
+        methodBFS2(root); // using Queue
     }
 
     public static void methodBFS1(Node3 root) {
@@ -65,8 +69,25 @@ public class test_Binary_Tree_Treversal {
         }
     }
 
-    public static void printLevelOrder(Node3 node3) {
+    public static void methodBFS2(Node3 root) {
 
+        Queue<Node3> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+
+            Node3 current = queue.poll();
+            System.out.print(current.data + " ");
+
+            if (current.left != null)
+                queue.add(current.left);
+
+            if (current.right != null)
+                queue.add(current.right);
+
+        }
 
     }
+
+
 }
