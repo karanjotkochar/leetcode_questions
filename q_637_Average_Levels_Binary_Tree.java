@@ -21,7 +21,7 @@ class TreeNode {
 public class q_637_Average_Levels_Binary_Tree {
     public static void main(String[] args) {
         TreeNode root = null;
-        // [3,9,20,null,null,15,7]
+
         root = new TreeNode(3);
         root.left = new TreeNode(9);
         root.right = new TreeNode(20);
@@ -34,7 +34,7 @@ public class q_637_Average_Levels_Binary_Tree {
 
     public static List<Double> averageOfLevels(TreeNode root) {
 
-        int sum = 0;
+        long sum = 0; // to avoid overflow
         int count = 0;
         List<Double> list = new ArrayList<>();
 
@@ -44,7 +44,7 @@ public class q_637_Average_Levels_Binary_Tree {
         while (!queue.isEmpty()) {
             sum = 0;
             count= 0;
-            Queue<TreeNode> temp = new LinkedList<TreeNode>();
+            Queue<TreeNode> tempQueue = new LinkedList<TreeNode>();
 
             while (!queue.isEmpty()) {
                 TreeNode n = queue.peek();
@@ -52,12 +52,12 @@ public class q_637_Average_Levels_Binary_Tree {
                 sum = sum + n.val;
                 count++;
                 if (n.left != null)
-                    temp.add(n.left);
+                    tempQueue.add(n.left);
                 if (n.right != null)
-                    temp.add(n.right);
+                    tempQueue.add(n.right);
             }
 
-            queue = temp;
+            queue = tempQueue;
             list.add((sum*1.0)/count);
         }
 
