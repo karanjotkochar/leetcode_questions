@@ -29,11 +29,15 @@ public class test_Binary_Tree_Treversal {
 
         // Get height of tree
         int h = height(root);
-
-
+        int i;
+        for (i=1; i<=h; i++) {
+            printCurrentLevel(root, i);
+            System.out.println();
+        }
     }
 
     public static int height(Node3 root) {
+
         // Height of tree
         if (root == null)
             return 0;
@@ -54,7 +58,7 @@ public class test_Binary_Tree_Treversal {
         if (root == null)
             return;
         if (level == 1)
-            System.out.println(root.data + " ");
+            System.out.print(root.data + " ");
         else if (level > 1) {
             printCurrentLevel(root.left, level - 1);
             printCurrentLevel(root.right, level - 1);
