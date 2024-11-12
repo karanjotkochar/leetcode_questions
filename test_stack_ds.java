@@ -4,6 +4,7 @@ import java.util.Stack;
 public class test_stack_ds {
     public static void main(String[] args) {
         vectorImplementation();
+        System.out.println();
         arrayDequeImplementation();
     }
 
@@ -30,8 +31,7 @@ public class test_stack_ds {
 
     public static void arrayDequeImplementation() {
 
-        // Array Deque implementation
-
+        // Array Deque implementation as Stack
         ArrayDeque<Integer> stack = new ArrayDeque<>();
         stack.push(1);
         stack.push(2);
