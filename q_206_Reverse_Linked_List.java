@@ -77,7 +77,8 @@ public class q_206_Reverse_Linked_List {
 
         // make last node as the Head of Linked List
         if(!stack.isEmpty()) {
-            // main step:
+            // main step: head as stack top
+            // temp as head and temp iterates further
             head = stack.pop();
             temp = head;
 
