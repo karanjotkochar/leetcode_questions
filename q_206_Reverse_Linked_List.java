@@ -1,3 +1,8 @@
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
+
 // https://leetcode.com/problems/reverse-linked-list/description/
 class ListNode2 {
     int val;
@@ -23,8 +28,9 @@ public class q_206_Reverse_Linked_List {
         printLL(listNode2);
 
         System.out.println();
-        listNode2 = reverseList(listNode2);
-        listNode2 = reverseList2(listNode2);
+//        listNode2 = reverseList(listNode2);
+//        listNode2 = reverseList2(listNode2);
+        listNode2 = reverseList3(listNode2);
 
         System.out.print("Reverse LL: ");
         printLL(listNode2);
@@ -51,6 +57,37 @@ public class q_206_Reverse_Linked_List {
 
         // Recursive solution
         // TO DO: implement recursive solution
+
+        return head;
+    }
+
+    public static ListNode2 reverseList3(ListNode2 head) {
+
+        // Using Stack
+        Stack<ListNode2> stack = new Stack<>();
+
+        ListNode2 temp = head;
+
+        // Push all nodes to stack
+        // It never reaches null, so remains at last node
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.next;
+        }
+
+        // make last node as the Head of Linked List
+        if(!stack.isEmpty()) {
+            // main step:
+            head = stack.pop();
+            temp = head;
+
+            while (!stack.isEmpty()) {
+                    temp.next = stack.pop();
+                    temp = temp.next;
+            }
+
+            temp.next = null;
+        }
 
         return head;
     }
