@@ -18,10 +18,10 @@ class Node3 {
 public class test_Binary_Tree_Traversal_BFS {
     public static void main(String[] args) {
         Node3 root = new Node3(1);
-        root.left = new Node3(2);
-        root.right = new Node3(3);
-        root.left.left = new Node3(4);
-        root.left.right = new Node3(5);
+            root.left = new Node3(2);
+            root.right = new Node3(3);
+            root.left.left = new Node3(4);
+            root.left.right = new Node3(5);
 
         methodBFS1(root); // using Recursion
         methodBFS2(root); // using Queue
