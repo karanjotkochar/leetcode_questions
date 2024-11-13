@@ -31,4 +31,17 @@ public class test_DFS {
         System.out.println(root.right);
 
     }
+
+    void printInorder(Node4 root) {
+        if (root == null)
+            return;
+
+        printInorder(root.left);
+        printInorder(root.data);
+        printInorder(root.right);
+    }
+
+    void printInorder() {
+        printInorder(root);
+    }
 }
