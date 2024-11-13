@@ -23,25 +23,13 @@ public class test_DFS {
     }
 
     public static void methodInorderDFS(Node4 root) {
+
         if (root == null)
             return;
 
-        System.out.println(root.left);
-        System.out.println(root.data);
-        System.out.println(root.right);
+        methodInorderDFS(root.left);
+        System.out.print(root.data + " ");
+        methodInorderDFS(root.right);
 
-    }
-
-    void printInorder(Node4 root) {
-        if (root == null)
-            return;
-
-        printInorder(root.left);
-        printInorder(root.data);
-        printInorder(root.right);
-    }
-
-    void printInorder() {
-        printInorder(root);
     }
 }
