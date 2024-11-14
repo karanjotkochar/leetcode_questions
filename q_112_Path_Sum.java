@@ -16,5 +16,24 @@ class TreeNode4 {
 public class q_112_Path_Sum {
     public static void main(String[] args) {
 
+        TreeNode4 root = null;
+        root = new TreeNode4(5);
+        root.left = new TreeNode4(4);
+        root.right = new TreeNode4(8);
+        root.left.left = new TreeNode4(11);
+        root.left.left.left = new TreeNode4(7);
+        root.left.left.right = new TreeNode4(2);
+        root.right.left = new TreeNode4(13);
+        root.right.right = new TreeNode4(4);
+        root.right.right.right = new TreeNode4(1);
+
+        int targetSum = 22;
+        boolean val = hasPathSum(root, targetSum);
+        System.out.println(val);
+    }
+
+    public static boolean hasPathSum(TreeNode4 root, int targetSum) {
+
+    return false;
     }
 }
