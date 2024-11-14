@@ -19,6 +19,8 @@ public class test_DFS {
         root.left.right = new Node4(5);
 
         methodInorderDFS(root);
+        System.out.println();
+        methodPreorderDFS(root);
 
     }
 
@@ -30,6 +32,17 @@ public class test_DFS {
         methodInorderDFS(root.left);
         System.out.print(root.data + " ");
         methodInorderDFS(root.right);
+
+    }
+
+    public static void methodPreorderDFS(Node4 root) {
+
+        if (root == null)
+            return;
+
+        System.out.print(root.data + " ");
+        methodPreorderDFS(root.left);
+        methodPreorderDFS(root.right);
 
     }
 }
