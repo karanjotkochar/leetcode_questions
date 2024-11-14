@@ -34,6 +34,7 @@ public class q_100_Same_Tree {
 
     public static boolean isSameTree(TreeNode3 p, TreeNode3 q) {
 
+        // Recursive solution: DFS
         if (p == null && q == null)
             return true;
 
