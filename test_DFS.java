@@ -21,6 +21,8 @@ public class test_DFS {
         methodInorderDFS(root);
         System.out.println();
         methodPreorderDFS(root);
+        System.out.println();
+        methodPostorderDFS(root);
 
     }
 
@@ -43,6 +45,17 @@ public class test_DFS {
         System.out.print(root.data + " ");
         methodPreorderDFS(root.left);
         methodPreorderDFS(root.right);
+
+    }
+
+    public static void methodPostorderDFS(Node4 root) {
+
+        if (root == null)
+            return;
+
+        methodPostorderDFS(root.left);
+        methodPostorderDFS(root.right);
+        System.out.print(root.data + " ");
 
     }
 }
