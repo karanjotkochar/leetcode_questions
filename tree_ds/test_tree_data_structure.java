@@ -1,11 +1,13 @@
+package tree_ds;
+
 import java.util.Vector;
 
 class Node2 {
     int data;
-    Node first_child;
-    Node second_child;
-    Node third_child;
-    Node fourth_child;
+    Node2 first_child;
+    Node2 second_child;
+    Node2 third_child;
+    Node2 fourth_child;
 }
 public class test_tree_data_structure {
     public static void main(String[] args) {
