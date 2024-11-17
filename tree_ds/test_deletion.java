@@ -1,5 +1,8 @@
 package tree_ds;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class test_deletion {
     public static void main(String[] args) {
         BinaryTreeNode root = new BinaryTreeNode(2);
@@ -20,8 +23,16 @@ public class test_deletion {
 
     public static BinaryTreeNode deleteElement(BinaryTreeNode root, int key) {
 
+        // Empty tree
+        if (root == null)
+            return root;
 
-        return root;
+        Queue<BinaryTreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+      // To Do: Add deletion code
+
+        return;
     }
 
     public static void inorderTraversal(BinaryTreeNode root) {
