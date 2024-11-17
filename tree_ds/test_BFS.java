@@ -15,7 +15,7 @@ class Node3 {
     }
 }
 
-public class test_Binary_Tree_Traversal_BFS {
+public class test_BFS {
     public static void main(String[] args) {
         Node3 root = new Node3(1);
             root.left = new Node3(2);
