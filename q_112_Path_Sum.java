@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 // https://leetcode.com/problems/path-sum/description/
 class TreeNode4 {
     int val;
@@ -30,10 +33,33 @@ public class q_112_Path_Sum {
         int targetSum = 22;
         boolean val = hasPathSum(root, targetSum);
         System.out.println(val);
+
+        printRootLeafNodePath(root);
     }
 
     public static boolean hasPathSum(TreeNode4 root, int targetSum) {
 
     return false;
+    }
+
+    public static void printRootLeafNodePath(TreeNode4 root) {
+
+        // print all root to leaf node paths
+        List<Integer> path = new ArrayList<>();
+
+        if (root == null)
+            return;
+
+        path.add(root.val);
+
+        if (root.left == null && root.right == null)
+            System.out.println(path);
+        else {
+
+        }
+
+        printRootLeafNodePath(root.left);
+        System.out.print(root.val + " ");
+
     }
 }
