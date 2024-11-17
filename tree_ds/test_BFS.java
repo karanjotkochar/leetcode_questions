@@ -1,4 +1,4 @@
-// Traversal
+package tree_ds;// Traversal
 // Level Order Traversal -- BFS
 
 import java.util.LinkedList;
@@ -8,14 +8,14 @@ class Node3 {
     int data;
     Node3 left;
     Node3 right;
-    public Node3 (int item) {
-        data = item;
+    public Node3 (int data) {
+        this.data = data;
         left = null;
         right = null;
     }
 }
 
-public class test_Binary_Tree_Traversal_BFS {
+public class test_BFS {
     public static void main(String[] args) {
         Node3 root = new Node3(1);
             root.left = new Node3(2);
@@ -23,7 +23,7 @@ public class test_Binary_Tree_Traversal_BFS {
             root.left.left = new Node3(4);
             root.left.right = new Node3(5);
 
-        methodBFS1(root); // using Recursion
+//        methodBFS1(root); // using Recursion
         methodBFS2(root); // using Queue
     }
 
