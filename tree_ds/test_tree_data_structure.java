@@ -29,21 +29,21 @@ public class test_tree_data_structure {
         root.second_child.first_child = new Node2(7);
 
         System.out.println("Tree structure:");
-        printTree(root, "");
+        printTree(root);
     }
 
-    public static void printTree(Node2 node, String indent) {
+    public static void printTree(Node2 node) {
         if (node == null) {
             return;
         }
 
         // Print the current node
-        System.out.println(indent + "Node: " + node.data);
+        System.out.println("Node: " + node.data);
 
         // Recursively print children
-        printTree(node.first_child, indent + "  ");
-        printTree(node.second_child, indent + "  ");
-        printTree(node.third_child, indent + "  ");
-        printTree(node.fourth_child, indent + "  ");
+        printTree(node.first_child);
+        printTree(node.second_child);
+        printTree(node.third_child);
+        printTree(node.fourth_child);
     }
 }
