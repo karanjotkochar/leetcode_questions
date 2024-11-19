@@ -24,15 +24,15 @@ public class test_deletion {
     public static BinaryTreeNode deleteElement(BinaryTreeNode root, int key) {
 
         // Empty tree
-        if (root == null)
-            return root;
-
-        Queue<BinaryTreeNode> queue = new LinkedList<>();
-        queue.add(root);
+//        if (root == null)
+//            return root;
+//
+//        Queue<BinaryTreeNode> queue = new LinkedList<>();
+//        queue.add(root);
 
       // To Do: Add deletion code
 
-        return;
+        return root;
     }
 
     public static void inorderTraversal(BinaryTreeNode root) {
