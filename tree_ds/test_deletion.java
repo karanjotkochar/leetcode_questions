@@ -16,23 +16,23 @@ public class test_deletion {
         inorderTraversal(root);
         System.out.println();
 
-        deleteElement(root, key);
-        inorderTraversal(root);
+        BinaryTreeNode newRoot = deleteElement(root, key);
+        inorderTraversal(newRoot);
 
     }
 
-    public static void deleteElement(BinaryTreeNode root, int key) {
+    public static BinaryTreeNode deleteElement(BinaryTreeNode root, int key) {
 
         // Empty tree
-        if (root == null);
-
-
+//        if (root == null)
+//            return root;
+//
 //        Queue<BinaryTreeNode> queue = new LinkedList<>();
 //        queue.add(root);
 
       // To Do: Add deletion code
 
-
+        return root;
     }
 
     public static void inorderTraversal(BinaryTreeNode root) {
