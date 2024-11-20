@@ -1,7 +1,7 @@
 public class BinaryTreeNode {
     int data;
-    tree_ds.BinaryTreeNode left;
-    tree_ds.BinaryTreeNode right;
+    BinaryTreeNode left;
+    BinaryTreeNode right;
 
     public BinaryTreeNode (int data) {
         this.data = data;
