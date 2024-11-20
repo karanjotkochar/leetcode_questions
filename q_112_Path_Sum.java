@@ -34,51 +34,32 @@ public class q_112_Path_Sum {
         boolean val = hasPathSum(root, targetSum);
         System.out.println(val);
 
-//        printRootLeafNodePath(root);
+        printRootLeafNodePath(root);
     }
 
     public static boolean hasPathSum(TreeNode4 root, int targetSum) {
 
-        boolean left = false;
-        boolean right = false;
-
-        // Empty tree --> false
-        if (root == null)
-            return false;
-
-        // with every iteration reduce value
-        int subSum = targetSum - root.val;
-
-        // if val == 0 and leaf node --> true
-        if (subSum == 0 && root.left == null && root.right == null)
-            return true;
-
-        // iterate left or roght
-        if (root.left != null)
-            left = hasPathSum(root.left, subSum);
-        if (root.right != null)
-            right = hasPathSum(root.right, subSum);
-
-        return left || right;
-
+    return false;
     }
 
     public static void printRootLeafNodePath(TreeNode4 root) {
 
-        // Traversing to left leaf node
+        // print all root to leaf node paths
+        List<Integer> path = new ArrayList<>();
 
-        if (root == null) {
-            System.out.println("root == null");
+        if (root == null)
             return;
+
+        path.add(root.val);
+
+        if (root.left == null && root.right == null)
+            System.out.println(path);
+        else {
+
         }
 
         printRootLeafNodePath(root.left);
-
-        if (root.left == null)
-            System.out.println("null");
-        if (root.left != null)
-            System.out.println(root.left.val);
-
+        System.out.print(root.val + " ");
 
     }
 }
