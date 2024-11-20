@@ -16,6 +16,20 @@ public class q_104_Maximum_Depth_Binary_Tree {
     }
     public static int maxDepth(BinaryTreeNode root) {
 
+        // DFS: Recursion
+
+        // Edge case: Tree is empty
+        if (root == null)
+            return 0;
+
+        int leftDepth = maxDepth(root.left);
+        int rightDepth = maxDepth(root.right);
+
+        return Math.max(leftDepth, rightDepth) + 1;
+    }
+    public static int maxDepth2(BinaryTreeNode root) {
+
+        // BFS: level order traversal
         // Edge case: Tree is empty
         if (root == null)
             return 0;
