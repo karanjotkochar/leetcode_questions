@@ -13,23 +13,40 @@ public class q_257_Binary_Tree_Paths {
         binaryTreePaths(root);
     }
     public static List<String> binaryTreePaths(BinaryTreeNode root) {
-        ArrayList<String> list = new ArrayList<>();
+        List<String> paths = new ArrayList<>();
 
         if (root != null)
-            searchBT(root, "", list);
+            findPaths(root,"", paths);
 
-        return list;
+        System.out.println(paths);
+
+        return paths;
     }
-    public static void searchBT(BinaryTreeNode root, String path, ArrayList<String> list){
+    public static void findPaths(BinaryTreeNode node, String path, List<String> paths) {
 
-        if (root.left == null && root.right == null)
-            aa;
+        // path --> empty string
 
-        if (root.left != null)
-            aa;
+        // path: A temporary variable that builds the current path from the root to the current node.
+        // paths: A shared list that stores all completed paths.
 
-        if (root.right != null)
-            aa;
+        // Append current node's value to the path
+        path = path + node.data;
+
+        // If the current node is a leaf, add the path to the list
+        if (node.left == null && node.right == null) {
+            paths.add(path);
+
+        } else {
+
+            // If not a leaf, continue with the left and right children
+            if (node.left != null) {
+                findPaths(node.left, path + "->", paths);
+            }
+            if (node.right != null) {
+                findPaths(node.right, path + "->", paths);
+
+            }
+        }
 
     }
 
