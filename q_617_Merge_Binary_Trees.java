@@ -14,10 +14,36 @@ public class q_617_Merge_Binary_Trees {
         root2.right.right = new BinaryTreeNode(7);
 
         mergeTrees(root1, root2);
+
+        BinaryTreeNode mergedRoot = mergeTrees(root1, root2);
+        preorderDFS(mergedRoot);
     }
 
     public static BinaryTreeNode mergeTrees(BinaryTreeNode root1, BinaryTreeNode root2) {
 
-        return null;
+        // Not required: root1, root2 check implicitly
+        // if (root1 == null && root2 == null)
+
+        if (root1 == null)
+            return root2;
+        if (root2 == null)
+            return root1;
+
+        root1.data = root1.data + root2.data;
+
+        root1.left = mergeTrees(root1.left, root2.left);
+        root1.right = mergeTrees(root1.right, root2.right);
+
+        return root1;
+    }
+
+    public static void preorderDFS(BinaryTreeNode root) {
+        if (root == null)
+            return;
+
+        System.out.print(root.data + " ");
+        preorderDFS(root.left);
+        preorderDFS(root.right);
+
     }
 }
