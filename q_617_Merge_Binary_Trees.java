@@ -15,8 +15,8 @@ public class q_617_Merge_Binary_Trees {
 
         mergeTrees(root1, root2);
 
-        BinaryTreeNode mergedRoot = mergeTrees(root1, root2);
-        preorderDFS(mergedRoot);
+        BinaryTreeNode mergedRoot2 = mergeTrees(root1, root2);
+        preorderDFS(mergedRoot2);
     }
 
     public static BinaryTreeNode mergeTrees(BinaryTreeNode root1, BinaryTreeNode root2) {
@@ -29,8 +29,10 @@ public class q_617_Merge_Binary_Trees {
         if (root2 == null)
             return root1;
 
+        // Merge the current nodes
         root1.data = root1.data + root2.data;
 
+        // Merge the left and right subtrees
         root1.left = mergeTrees(root1.left, root2.left);
         root1.right = mergeTrees(root1.right, root2.right);
 
