@@ -21,6 +21,8 @@ public class q_572_Subtree_Another_Tree {
         if (root == null)
             return false;
 
+        // TO DO
+
         if (root.data == subRoot.data) {
             System.out.println("root.data = " + root.data + " and subRoot data: " + subRoot.data);
             if (root.left == subRoot.left && root.right == subRoot.right)
