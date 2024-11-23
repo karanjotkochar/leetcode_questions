@@ -13,9 +13,24 @@ public class q_572_Subtree_Another_Tree {
         subRoot.right = new BinaryTreeNode(2);
 
         isSubtree(root, subRoot);
+        System.out.println(isSubtree(root, subRoot));
 
     }
     public static boolean isSubtree(BinaryTreeNode root, BinaryTreeNode subRoot) {
+
+        if (root == null)
+            return false;
+
+        if (root.data == subRoot.data) {
+            System.out.println("root.data = " + root.data + " and subRoot data: " + subRoot.data);
+            if (root.left == subRoot.left && root.right == subRoot.right)
+                return true;
+            else
+                return false;
+        }
+
+        isSubtree(root.left, subRoot);
+        isSubtree(root.right, subRoot);
 
         return false;
     }
