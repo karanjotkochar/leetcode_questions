@@ -27,6 +27,7 @@ public class q_543_Diameter_Binary_Tree {
         int diaLeft = diameterOfBinaryTree(root.left);
         int diaRight = diameterOfBinaryTree(root.right);
 
+        // Math.max compare: diameter wrt root, diameter of left subtree, right subtree
         return Math.max(diameter, Math.max(diaLeft, diaRight));
     }
 
