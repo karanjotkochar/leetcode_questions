@@ -14,8 +14,27 @@ public class q_543_Diameter_Binary_Tree {
     }
     public static int diameterOfBinaryTree(BinaryTreeNode root) {
 
-        // TO DO
+        if (root == null)
+            return 0;
 
-        return 0;
+        // calculate the left and right sub-trees height
+        // we get the node which has max height on both the sides
+
+        // diameter of tree is max height of left tree, right tree
+        int diameter = heightTree(root.left) + heightTree(root.right);
+
+        int diaLeft = diameterOfBinaryTree(root.left);
+        int diaRight = diameterOfBinaryTree(root.right);
+
+        return Math.max(diameter, Math.max(diaLeft, diaRight));
+    }
+
+    public static int heightTree(BinaryTreeNode root) {
+        if (root == null)
+            return 0;
+
+        int height = Math.max(heightTree(root.left), heightTree(root.right)) + 1;
+
+        return height;
     }
 }
