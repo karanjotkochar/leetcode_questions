@@ -21,6 +21,7 @@ public class q_543_Diameter_Binary_Tree {
         // we get the node which has max height on both the sides
 
         // diameter of tree is max height of left tree, right tree
+        // if to calculate wrt nodes: add "plus 1"
         int diameter = heightTree(root.left) + heightTree(root.right);
 
         int diaLeft = diameterOfBinaryTree(root.left);
