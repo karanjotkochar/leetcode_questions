@@ -21,29 +21,26 @@ public class q_572_Subtree_Another_Tree {
         if (root == null)
             return false;
 
-        // TO DO
+        if (subRoot == null)
+            return false;
 
-        // check trees are identical
-        // recursively call left and right
+        // For every node, check if the trees are identical
+        if (isIdentical(root, subRoot))
+            return true;
 
-        if (root.data == subRoot.data) {
-            System.out.println("root.data = " + root.data + " and subRoot data: " + subRoot.data);
-            if (root.left == subRoot.left && root.right == subRoot.right)
-                return true;
-            else
-                return false;
-        }
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
 
-        isSubtree(root.left, subRoot);
-        isSubtree(root.right, subRoot);
-
-        return false;
     }
 
     public static boolean isIdentical(BinaryTreeNode root1, BinaryTreeNode root2) {
+
+        if (root1 == null && root2 == null)
+            return true;
+
         if (root1 == null || root2 == null)
             return false;
 
-        if (root1 == null && root2 == null)
+        return (root1.data == root2.data && isIdentical(root1.left, root2.left) && isIdentical(root1.right, root2.right));
+
     }
 }
