@@ -13,6 +13,15 @@ public class OperationsTrieDS {
         for (String s : list) {
             insertKey(root, s);
         }
+
+        //Search in a Trie
+        List<String> search = Arrays.asList("and", "an", "do");
+        for (String s : search) {
+            if (searchKey(root, s))
+                System.out.println("Present");
+            else
+                System.out.println("Not Present");
+        }
     }
 
     public static void insertKey(Trie root, String key) {
@@ -37,6 +46,26 @@ public class OperationsTrieDS {
         // marks the end of the word
         curr.wordEnd = true;
 
+    }
+
+    public static boolean searchKey(Trie root, String key) {
+
+        // root node = current pointer initialize
+        Trie curr = root;
+
+        // iterate over the length of the string
+        for (char c : key.toCharArray()) {
+
+            // check if node exists for the current character
+            if (curr.child[c - 'a'] == null)
+                return false;
+
+            // Move the pointer to existing node for the current character
+            curr = curr.child[c - 'a'];
+        }
+
+        // return true: if word exists and wordEnd is true
+        return curr.wordEnd;
     }
 
 }
