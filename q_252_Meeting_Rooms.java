@@ -42,6 +42,18 @@ public class q_252_Meeting_Rooms {
 
     public static boolean canAttendMeetings(List<Interval> intervals) {
 
-        return false;
+        int n = intervals.size();
+        for (int i=0; i<n; i++) {
+            Interval A = intervals.get(i);
+
+            for (int j= i+1; j<n; j++) {
+                Interval B = intervals.get(j);
+
+                if (Math.min(A.end, B.end) > Math.max(A.start, B.start))
+                    return false;
+            }
+        }
+
+        return true;
     }
 }
