@@ -1,27 +1,21 @@
 // https://leetcode.com/problems/counting-bits/description/
 
 public class q_338_Counting_Bits {
-
     public static void main(String[] args) {
         int n = 4;
-        countBits(n);
+        countBits(n); // test function
     }
-    public static int[] countBits(int n) {
-
-        int len = n + 1;
-        int[] ansArr = new int[len + 1];
+    public static void countBits(int n) {
 
         // binary representation of a number
         for (int i=0; i<=n; i++) {
 
-            System.out.println(i);
-            // String binary = Integer.toBinaryString(i);
-            // System.out.println(binary);
-            System.out.println(recursiveCount(i));
+            System.out.println("Number: " + i); // print number (0 to n)
+
+            String binary = Integer.toBinaryString(i);
+            System.out.println("Binary representation: " + binary); // print numbers corresponding binary rep.
             System.out.println();
         }
-
-        return null;
     }
 
     public static int count(int n) {
