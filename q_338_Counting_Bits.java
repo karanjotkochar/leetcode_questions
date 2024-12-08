@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/counting-bits/description/
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class q_338_Counting_Bits {
@@ -13,7 +14,7 @@ public class q_338_Counting_Bits {
         countBits(n);
 
     }
-    public static void binaryRep(int n) {
+    public static void binaryRep(int n) {\
 
         // binary representation of a number
         for (int i=0; i<=n; i++) {
@@ -29,16 +30,20 @@ public class q_338_Counting_Bits {
     public static int[] countBits(int n) {
 
        int[] arr = new int[n+1];
-        List<Integer> ls = new ArrayList<>();
+       List<Integer> ls = new ArrayList<>();
 
-        for (int i=0; i<=n; i++) {
+       for (int i=0; i<=n; i++) {
             ls.add(count(i));
             //ls.add(recursiveCount(i));
-        }
+       }
 
-        System.out.println(ls);
+       arr = ls.stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
 
-        return arr;
+       // Arrays.stream(arr).forEach(System.out::print);
+
+       return arr;
     }
     public static int count(int n) {
         int count = 0;
