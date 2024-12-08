@@ -14,7 +14,7 @@ public class q_338_Counting_Bits {
         countBits(n);
 
     }
-    public static void binaryRep(int n) {\
+    public static void binaryRep(int n) {
 
         // binary representation of a number
         for (int i=0; i<=n; i++) {
